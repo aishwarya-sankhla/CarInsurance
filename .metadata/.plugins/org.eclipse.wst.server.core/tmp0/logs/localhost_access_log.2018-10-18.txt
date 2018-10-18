@@ -266,3 +266,12 @@
 0:0:0:0:0:0:0:1 - - [18/Oct/2018:19:29:49 +0530] "POST /HondaService/rest/service/addservice HTTP/1.1" 204 -
 0:0:0:0:0:0:0:1 - - [18/Oct/2018:19:30:07 +0530] "GET /HondaService/mainpage.jsp HTTP/1.1" 200 1352
 0:0:0:0:0:0:0:1 - - [18/Oct/2018:19:30:09 +0530] "GET /HondaService/ServiceRec.jsp HTTP/1.1" 200 1467
+127.0.0.1 - - [18/Oct/2018:19:30:52 +0530] "GET / HTTP/1.1" 404 1073
+0:0:0:0:0:0:0:1 - - [18/Oct/2018:19:31:02 +0530] "GET /HondaService/rest/service/servicerecs/1234 HTTP/1.1" 200 480
+0:0:0:0:0:0:0:1 - - [18/Oct/2018:19:31:13 +0530] "GET /HondaService/rest/service/getallcust HTTP/1.1" 200 46
+0:0:0:0:0:0:0:1 - - [18/Oct/2018:19:31:17 +0530] "GET /HondaService/updateCustomerContact.jsp HTTP/1.1" 200 1801
+0:0:0:0:0:0:0:1 - - [18/Oct/2018:19:31:17 +0530] "GET /HondaService/rest/service/getallcust HTTP/1.1" 200 46
+0:0:0:0:0:0:0:1 - - [18/Oct/2018:19:31:23 +0530] "PUT /HondaService/rest/service/updatePhone?newPhone=777777 HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [18/Oct/2018:19:31:34 +0530] "GET /HondaService/newService.jsp HTTP/1.1" 200 3061
+0:0:0:0:0:0:0:1 - - [18/Oct/2018:19:31:34 +0530] "GET /HondaService/rest/service/getallcust HTTP/1.1" 200 46
+0:0:0:0:0:0:0:1 - - [18/Oct/2018:19:31:34 +0530] "GET /HondaService/rest/service/getservices HTTP/1.1" 200 358
