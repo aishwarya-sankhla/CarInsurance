@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+	.headBg{
+		height:200px;
+		background-color: yellow;
+	}
+	
+	img{
+		width:100px;
+		height:100px;
+	}
+</style>
+
+
+</head>
+<body>
+	<header>
+	
+	<h1>Maruti Service</h1>
+	</header>
+</body>
+</html>

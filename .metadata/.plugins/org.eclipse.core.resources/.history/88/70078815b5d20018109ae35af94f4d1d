@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="MarutiServiceCenter">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="hk2-utils-2.5.0-b42.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31846/Downloads/jaxrs-ri-2.27/jaxrs-ri/ext/hk2-utils-2.5.0-b42.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jersey-container-servlet-core.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31846/Downloads/jaxrs-ri-2.27/jaxrs-ri/lib/jersey-container-servlet-core.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="cdi-api-1.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31846/Downloads/jaxrs-ri-2.27/jaxrs-ri/ext/cdi-api-1.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jersey-hk2.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31846/Downloads/jaxrs-ri-2.27/jaxrs-ri/lib/jersey-hk2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jersey-media-json-binding.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31846/Downloads/jaxrs-ri-2.27/jaxrs-ri/lib/jersey-media-json-binding.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jersey-client.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31846/Downloads/jaxrs-ri-2.27/jaxrs-ri/lib/jersey-client.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jersey-common.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31846/Downloads/jaxrs-ri-2.27/jaxrs-ri/lib/jersey-common.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="MarutiServiceCenter"/>
+        <property name="java-output-path" value="/MarutiServiceCenter/build/classes"/>
+    </wb-module>
+</project-modules>

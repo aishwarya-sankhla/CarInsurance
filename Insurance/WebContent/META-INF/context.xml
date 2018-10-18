@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/JNDI_JDBC" docBase="JNDI_JDBC">
+
+ <Resource name="jdbc/ds1" 
+   auth="Container" type="javax.sql.DataSource" 
+           url="jdbc:oracle:thin:@10.140.4.104:1578:training" 
+           username="training" password="training2013"
+         driverClassName="oracle.jdbc.driver.OracleDriver" 
+  maxActive="20" maxIdle="10"/>
+</Context>      

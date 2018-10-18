@@ -1,0 +1,328 @@
+var jsondata;
+
+function getAllCustomers(){
+	var newSelect = document.getElementById('customers');
+	$.getJSON('http://localhost:8080/HondaService/rest/service/getallcust', function(data) {
+		jsondata = data;
+        $.each(data, function(index) {
+            
+            var opt = document.createElement("option");
+            opt.value= data[index].cid;
+            opt.innerHTML = data[index].custName+" "+ data[index].phone; 
+            newSelect.appendChild(opt);
+          
+        });
+    });
+
+}
+
+var fullCustDetails;
+function getCustomersFullDetails(){
+	var newSelect = document.getElementById('customer');
+	$.getJSON('http://localhost:8080/HondaService/rest/service/getallcust', function(data) {
+		fullCustDetails = data;
+        $.each(data, function(index) {
+            
+            var opt = document.createElement("option");
+            opt.value= data[index].cid+" "+data[index].custName+" "+ data[index].phone;
+            opt.innerHTML = data[index].custName+" "+ data[index].phone; 
+            newSelect.appendChild(opt);
+          
+        });
+    });
+}
+
+var custObjtoSend;
+function makeCustomerObj(){
+	var cid = $('#customer option:selected').val().split(" ")[0];
+	var custName =$('#customer option:selected').val().split(" ")[1];
+	var phone = $('#customer option:selected').val().split(" ")[2];
+	
+	var custObj = {};
+	custObj['cid'] = cid;
+	custObj['custName'] = custName;
+	custObj['phone'] = phone;
+	custObjtoSend=custObj;
+	
+}
+
+function changePhone(){
+	var newPhone = $('#phone').val();
+	alert(newPhone);
+	//send custObjtoSend
+	$.ajax({
+	    type: 'PUT',
+	    url: 'http://localhost:8080/HondaService/rest/service/updatePhone?newPhone='+newPhone,
+	    contentType: 'application/json',
+	    data: JSON.stringify(custObjtoSend), // access in body
+	}).done(function () {
+	   alert("Succesfuly Updated");
+	}).fail(function (msg) {
+	   alert("Not able to update");
+	});
+}
+
+function getRegNO() {
+	
+	var  regselect= document.getElementById('regno');
+	var cid = document.getElementById('customers').value;
+	
+	$.getJSON('http://localhost:8080/HondaService/rest/service/getcustcars/'+cid, function(data) {
+		jsondata = data;
+        $.each(data, function(index) {
+            
+            var opt = document.createElement("option");
+            opt.value= data[index].regno;
+            opt.innerHTML = data[index].regno+" "+ data[index].modelName; 
+            regselect.appendChild(opt);
+          
+        });
+    });
+}
+
+function loadAllServices(){
+	
+	var container = document.getElementById("serviceBox");
+	$.getJSON('http://localhost:8080/HondaService/rest/service/getservices', function(data) {
+        $.each(data, function(index) {
+        	var br = document.createElement('br');
+        	var checkbox = document.createElement('input');
+        	checkbox.type = "checkbox";
+        	checkbox.name = "service";
+        	checkbox.value = data[index].serviceType;
+        	checkbox.id = "service";
+        	var label = document.createElement('label');
+        	label.htmlFor = "service";
+        	label.appendChild(document.createTextNode(data[index].serviceType));
+        	
+        	container.appendChild(checkbox);
+        	container.appendChild(label);
+        	container.appendChild(br);
+        	
+           
+          
+        });
+    })
+
+	
+}
+
+
+function getEstimate(){
+	var services = [];
+	var regno = $('#regno option:selected').text().split(" ")[0];
+	var claimStatus = $('input[name=claimStatus]:checked').val();
+    
+	$.each($("input[name='service']:checked"), function(){
+    	services.push($(this).val());
+    });
+
+	$.ajax({
+		  url: "http://localhost:8080/HondaService/rest/service/getestimate/"+regno+"/"+claimStatus+"?services="+services,
+		  type: "get", //send it through get method
+		  dataType: 'json',
+		  success: function(response) {
+			  loadEstimate(response);
+		  },
+		  error: function(xhr) {
+			  alert("no!");
+		  }
+		});
+}
+
+
+function loadEstimate(jsonData){
+	
+	var data = jsonData.allEstimate;
+	var grandTotal = jsonData.grandTotal;
+	var maxClaimable = jsonData.maxClaimable;
+	
+	var container = document.getElementById("estimateContainer");
+	
+	var table = document.createElement('table').setAttribute('border',1px);
+	var rowHeading = document.createElement('tr');
+	
+	var service = document.createElement('th');
+	var labour = document.createElement('th');
+	var metal = document.createElement('th');
+	var plastic = document.createElement('th');
+	
+	var claimedlabour = document.createElement('th');
+	var claimedmetal = document.createElement('th');
+	var claimedplastic = document.createElement('th');
+	
+	var finallabour = document.createElement('th');
+	var finalmetal = document.createElement('th');
+	var finalplastic = document.createElement('th');
+    
+	service.innerHTML = "Service type";
+	
+	labour.innerHTML = "Labour";
+	metal.innerHTML = "Metal";
+	plastic.innerHTML = "Plastic";
+	
+	claimedlabour.innerHTML = "Claimed Labour";
+	claimedmetal.innerHTML = "Claimed Metal";
+	claimedplastic.innerHTML = "Claimed Plastic";
+	
+	finallabour.innerHTML = "Final Labour";
+	finalmetal.innerHTML = "Final Metal";
+	finalplastic.innerHTML = "Final Plastic";
+	
+	rowHeading.appendChild(service);
+	
+	rowHeading.appendChild(labour);
+	rowHeading.appendChild(metal);
+	rowHeading.appendChild(plastic);
+	
+	rowHeading.appendChild(claimedlabour);
+	rowHeading.appendChild(claimedmetal);
+	rowHeading.appendChild(claimedplastic);
+	
+	rowHeading.appendChild(finallabour);
+	rowHeading.appendChild(finalmetal);
+	rowHeading.appendChild(finalplastic);
+	
+	table.appendChild(rowHeading);
+	$.each(data, function(index) {
+        	
+        	var row = document.createElement('tr');
+        	
+        	var service = document.createElement('td');
+        	
+        	var labour = document.createElement('td');
+        	var metal = document.createElement('td');
+        	var plastic = document.createElement('td');
+        	
+        	var claimedlabour = document.createElement('td');
+        	var claimedmetal = document.createElement('td');
+        	var claimedplastic = document.createElement('td');
+        	
+        	var finallabour = document.createElement('td');
+        	var finalmetal = document.createElement('td');
+        	var finalplastic = document.createElement('td');
+        	
+        	service.innerHTML = data[index].serviceType;
+        	
+        	labour.innerHTML = data[index].labour;
+        	metal.innerHTML = data[index].metal;
+        	plastic.innerHTML = data[index].plastic;
+        	
+        	
+        	claimedlabour.innerHTML = data[index].claimedLabour;
+        	claimedmetal.innerHTML = data[index].claimedMetal;
+        	claimedplastic.innerHTML = data[index].claimedPlastic;
+        	
+        	finallabour.innerHTML = data[index].finalLabour;
+        	finalmetal.innerHTML = data[index].finalMetal;
+        	finalplastic.innerHTML = data[index].finalPlastic;
+        	
+        	row.appendChild(service);
+        	row.appendChild(labour);
+        	row.appendChild(metal);
+        	row.appendChild(plastic);
+        	
+        	row.appendChild(claimedlabour);
+        	row.appendChild(claimedmetal);
+        	row.appendChild(claimedplastic);
+        	
+        	row.appendChild(finallabour);
+        	row.appendChild(finalmetal);
+        	row.appendChild(finalplastic);
+        	
+        	table.appendChild(row);
+        	
+       
+          
+        });
+        container.appendChild(table);
+        var para1 = document.createElement('p');
+        var para2 = document.createElement('p');
+        var b = document.createElement('br');
+        
+        para1.innerHTML = "Grand Total:" + grandTotal;
+        para2.innerHTML = "Max Claimable Insurance :" + maxClaimable;
+        
+        container.appendChild(b);
+        container.appendChild(para1);
+        container.appendChild(para2);
+        
+	
+}
+
+
+
+
+function loadServicesForReg(){
+	
+	var container = document.getElementById("recordContainer");
+	var date = document.createElement('h4');
+	var table = document.createElement('table');
+	
+	var rowHeading = document.createElement('tr');
+	
+	var serviceType = document.createElement('th');
+	var deliveryDate = document.createElement('th');
+	
+	
+	var regno = $('#regno').val();
+	$.getJSON('http://localhost:8080/HondaService/rest/service/servicerecs/'+regno, function(data) {
+		var dates = Object.keys(data);
+		var arrayLength = dates.length;
+		for (var i = 0; i < arrayLength; i++) {
+			ser = dates[i];
+			date.innerHTML ="Date:" + ser; 
+			
+			container.appendChild(date);
+			serviceType.innerHTML = "Service Type";
+			deliveryDate.innerHTML = "Delivery Date";
+			rowHeading.appendChild(serviceType);
+			rowHeading.appendChild(deliveryDate);
+			
+			table.appendChild(rowHeading);
+			$.each(serv =data[ser], function(index){
+				var row = document.createElement('tr');
+				var serType = document.createElement('td');
+				var delDate = document.createElement('td');
+				
+				serType.innerHTML = serv[index].serviceType;
+				delDate.innerHTML = serv[index].deliveryDate;
+				
+				row.appendChild(serType);
+				row.appendChild(delDate);
+				
+				table.appendChild(row);
+//				$.each(serv2 = serv[index], function(index){
+//					alert(JSON.stringify(serv2[index]));
+//			    });
+		    });
+			container.appendChild(table);
+		}
+    })
+
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

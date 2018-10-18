@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="MarutiServiceCenter">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="jersey-client.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/lib/jersey-client.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jersey-common.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/lib/jersey-common.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="osgi-resource-locator-1.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/osgi-resource-locator-1.0.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="org.osgi.core-4.2.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/org.osgi.core-4.2.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javax.annotation-api-1.2.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/javax.annotation-api-1.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jersey-hk2.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/lib/jersey-hk2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jersey-container-servlet-core.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/lib/jersey-container-servlet-core.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javax.ws.rs-api-2.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/api/javax.ws.rs-api-2.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hk2-utils-2.5.0-b42.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/hk2-utils-2.5.0-b42.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javax.json.bind-api-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/javax.json.bind-api-1.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jaxb-api-2.2.7.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/jaxb-api-2.2.7.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="persistence-api-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/persistence-api-1.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javax.servlet-api-3.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/javax.servlet-api-3.0.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jersey-media-sse.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/lib/jersey-media-sse.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="el-api-2.2.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/el-api-2.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javax.json-api-1.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/javax.json-api-1.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jersey-server.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/lib/jersey-server.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javassist-3.22.0-CR2.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/javassist-3.22.0-CR2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javax.inject-1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/javax.inject-1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="aopalliance-repackaged-2.5.0-b42.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/aopalliance-repackaged-2.5.0-b42.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jersey-media-json-binding.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/lib/jersey-media-json-binding.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hk2-api-2.5.0-b42.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/hk2-api-2.5.0-b42.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javax.inject-2.5.0-b42.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/javax.inject-2.5.0-b42.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hk2-locator-2.5.0-b42.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/hk2-locator-2.5.0-b42.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="cdi-api-1.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/cdi-api-1.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jersey-media-jaxb.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/lib/jersey-media-jaxb.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="validation-api-1.1.0.Final.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/validation-api-1.1.0.Final.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javax.json-1.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/javax.json-1.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jersey-container-servlet.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/lib/jersey-container-servlet.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jsr250-api-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/jsr250-api-1.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jboss-interceptors-api_1.1_spec-1.0.0.Beta1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/jboss-interceptors-api_1.1_spec-1.0.0.Beta1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="yasson-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Desktop/jaxre/jaxrs-ri-2.27/jaxrs-ri/ext/yasson-1.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="gson-2.8.2.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/AC31858/Downloads/gson-2.8.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="MarutiServiceCenter"/>
+        <property name="java-output-path" value="/MarutiServiceCenter/build/classes"/>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+	h1{
+		height:200px;
+		background-color: yellow;
+	}
+	
+</style>
+
+
+</head>
+<body>
+	<header>
+	
+	<h1>Honda Service Center</h1>
+	</header>
+</body>
+</html>
