@@ -36,7 +36,7 @@ public class DAOImpl implements DAO{
 	@Override
 	public int addEmployee(Employee emp) {
 		int status=0;
-		String sql="insert into service_employee_as values(?,?,?)";
+		String sql="insert into service_employee_ri values(?,?,?)";
 		
 		try {
 			PreparedStatement pstm = conn.prepareStatement(sql);
@@ -64,7 +64,7 @@ public class DAOImpl implements DAO{
 	public int validateEmployee(String eid,String password) {
 		
 		int status=0;
-		String sql="select * from service_employee_as where eid=?";
+		String sql="select * from service_employee_ri where eid=?";
 		
 		try {
 			PreparedStatement pstm = conn.prepareStatement(sql);
@@ -142,7 +142,7 @@ public class DAOImpl implements DAO{
 
 	@Override
 	public List<Customer> getAllCustomers() {
-		String sql = "select distinct * from SERVICE_CUSTOMER_as";
+		String sql = "select distinct * from SERVICE_CUSTOMER_RI";
 		List<Customer> custList= new ArrayList<>();
 		try {
 			PreparedStatement psmst = conn.prepareStatement(sql);
@@ -165,7 +165,7 @@ public class DAOImpl implements DAO{
 
 	@Override
 	public int addNewCar(String cid, Car car) {
-		String sql = "insert into CUSTOMER_CARS_as values(?,?,?)";
+		String sql = "insert into CUSTOMER_CARS_RI values(?,?,?)";
 		int added=0;
 		try {
 			PreparedStatement psmst = conn.prepareStatement(sql);
@@ -184,7 +184,7 @@ public class DAOImpl implements DAO{
 	@Override
 	public List<Customer> getAllCustomersWithCars() {
 		
-		String sql = "select * from SERVICE_CUSTOMER_as NATURAL JOIN CUSTOMER_CARS_as";
+		String sql = "select * from SERVICE_CUSTOMER_RI NATURAL JOIN CUSTOMER_CARS_RI";
 		List<Customer> custList= new ArrayList<>();
 		
 		try {
@@ -225,7 +225,7 @@ public class DAOImpl implements DAO{
 
 	@Override
 	public List<Car> getCarsOfCustomer(int cid) {
-		String sql = "select CUSTOMER_CARS_as.REGNO,CUSTOMER_CARS_as.MODELNAME from CUSTOMER_CARS_as where CID=?";
+		String sql = "select CUSTOMER_CARS_RI.REGNO,CUSTOMER_CARS_RI.MODELNAME from CUSTOMER_CARS_RI where CID=?";
 		List<Car> carList= new ArrayList<>();
 		
 		try {
@@ -261,7 +261,7 @@ public class DAOImpl implements DAO{
 
 	@Override
 	public List<CarServices> getServices() {
-		String sql = "select * from SERVICES_as";
+		String sql = "select * from SERVICES_RI";
 		List<CarServices> serviceList= new ArrayList<>();
 		try {
 			PreparedStatement psmst = conn.prepareStatement(sql);
@@ -294,7 +294,7 @@ public class DAOImpl implements DAO{
 		REGNO
 		*/       
 		int status=0;
-		String sql="insert into service_log_as values(service_id_as.nextval,?,?,?,?)";
+		String sql="insert into service_log_ri values(service_id_ri.nextval,?,?,?,?)";
 		
 		try {
 			PreparedStatement pstm = conn.prepareStatement(sql);
@@ -323,7 +323,7 @@ public class DAOImpl implements DAO{
 		METAL                 NUMBER       
 		LABOUR                NUMBER      
 	**/	
-		String sql = "select * from SERVICES_as where SERVICE_TYPE=?";
+		String sql = "select * from SERVICES_RI where SERVICE_TYPE=?";
 		PreparedStatement pstm;
 		CarServices carServices=null;
 		try {
@@ -356,7 +356,7 @@ public class DAOImpl implements DAO{
 			REGNO              VARCHAR2(12) 
 		 */
 		HashMap< String, List<ServiceLog>> serviceWithDate = new HashMap<>();
-		String sql = "select * from SERVICE_LOG_as where REGNO=? ORDER BY SERVICE_DATE";
+		String sql = "select * from SERVICE_LOG_RI where REGNO=? ORDER BY SERVICE_DATE";
 		try {
 
 			PreparedStatement pstm = conn.prepareStatement(sql);
@@ -390,7 +390,7 @@ public class DAOImpl implements DAO{
 
 	@Override
 	public int updatePhone(Customer cust, String newPhone) {
-		String sql = "UPDATE SERVICE_CUSTOMER_as Set phone = ? where cid = ?";
+		String sql = "UPDATE SERVICE_CUSTOMER_Ri Set phone = ? where cid = ?";
 		int updated = 0;
 		try {
 			PreparedStatement pstm = conn.prepareStatement(sql);

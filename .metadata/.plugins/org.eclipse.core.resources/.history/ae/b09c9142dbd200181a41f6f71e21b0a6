@@ -28,7 +28,7 @@ public class DaoImpl implements Dao{
 	@Override
 	public InsuranceInfo getInsuranceInfo(String regNo) {
 		InsuranceInfo info=null;
-		String sql= "select * from policy_info_as natural join insurance_info_as where insurance_info_as.REGNO=?";
+		String sql= "select * from policy_info_ri natural join insurance_info_ri where insurance_info_ri.REGNO=?";
 		try {
 			PreparedStatement pstm=conn.prepareStatement(sql);
 			pstm.setString(1, regNo);
@@ -53,7 +53,7 @@ public class DaoImpl implements Dao{
 	public InsuranceType getInsuranceTypeInfo(String insuranceType) {
 
 		InsuranceType insuranceTypeInfo=null;
-		String sql= "select * from TYPE_INFO_as where INSURANCE_TYPE=?";
+		String sql= "select * from TYPE_INFO_RI where INSURANCE_TYPE=?";
 		try {
 			PreparedStatement pstm=conn.prepareStatement(sql);
 			pstm.setString(1, insuranceType);

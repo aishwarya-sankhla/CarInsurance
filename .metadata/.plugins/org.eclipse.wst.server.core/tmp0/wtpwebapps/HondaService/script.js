@@ -257,13 +257,7 @@ function loadEstimate(jsonData){
 function loadServicesForReg(){
 	
 	var container = document.getElementById("recordContainer");
-	var date = document.createElement('h4');
-	var table = document.createElement('table');
 	
-	var rowHeading = document.createElement('tr');
-	
-	var serviceType = document.createElement('th');
-	var deliveryDate = document.createElement('th');
 	
 	
 	var regno = $('#regno').val();
@@ -271,7 +265,15 @@ function loadServicesForReg(){
 		var dates = Object.keys(data);
 		var arrayLength = dates.length;
 		for (var i = 0; i < arrayLength; i++) {
+			var date = document.createElement('h4');
+			var table = document.createElement('table');
+			
+			var rowHeading = document.createElement('tr');
+			
+			var serviceType = document.createElement('th');
+			var deliveryDate = document.createElement('th');
 			ser = dates[i];
+			
 			date.innerHTML ="Date:" + ser; 
 			
 			container.appendChild(date);

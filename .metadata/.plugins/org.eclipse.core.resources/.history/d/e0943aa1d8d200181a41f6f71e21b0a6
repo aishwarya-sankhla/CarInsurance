@@ -273,7 +273,6 @@ function loadServicesForReg(){
 			var serviceType = document.createElement('th');
 			var deliveryDate = document.createElement('th');
 			ser = dates[i];
-			
 			date.innerHTML ="Date:" + ser; 
 			
 			container.appendChild(date);
